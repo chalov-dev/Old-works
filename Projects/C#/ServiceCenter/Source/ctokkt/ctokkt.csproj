@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EE1DAD9-FE09-4316-8FF6-393F92272B8B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ctokkt</RootNamespace>
+    <AssemblyName>ctokkt</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.InfoPath, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminsSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminsSettings.Designer.cs">
+      <DependentUpon>AdminsSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmMenu\InsertDolzh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmMenu\InsertDolzh.Designer.cs">
+      <DependentUpon>InsertDolzh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmMenu\InsertPodp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmMenu\InsertPodp.Designer.cs">
+      <DependentUpon>InsertPodp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmMenu\InsertSklad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmMenu\InsertSklad.Designer.cs">
+      <DependentUpon>InsertSklad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmMenu\InsertUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmMenu\InsertUser.Designer.cs">
+      <DependentUpon>InsertUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmMenu\Option.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmMenu\Option.Designer.cs">
+      <DependentUpon>Option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authoriz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authoriz.Designer.cs">
+      <DependentUpon>Authoriz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectToSql.cs" />
+    <Compile Include="connectBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connectBD.Designer.cs">
+      <DependentUpon>connectBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dok\Doc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dok\Doc.Designer.cs">
+      <DependentUpon>Doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dok\insertDok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dok\insertDok.Designer.cs">
+      <DependentUpon>insertDok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dok\Tovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dok\Tovar.Designer.cs">
+      <DependentUpon>Tovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dok\Ysluga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dok\Ysluga.Designer.cs">
+      <DependentUpon>Ysluga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excel\Application.cs" />
+    <Compile Include="JornalObsl.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JornalObsl.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Otchet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Otchet.Designer.cs">
+      <DependentUpon>Otchet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spravk\InsertKas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\InsertKas.Designer.cs">
+      <DependentUpon>InsertKas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spravk\InsertFN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\InsertFN.Designer.cs">
+      <DependentUpon>InsertFN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spravk\InsertModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\InsertModel.Designer.cs">
+      <DependentUpon>InsertModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spravk\InsertNeispr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\InsertNeispr.Designer.cs">
+      <DependentUpon>InsertNeispr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spravk\InsertOFD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\InsertOFD.Designer.cs">
+      <DependentUpon>InsertOFD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spravk\InsertSot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\InsertSot.Designer.cs">
+      <DependentUpon>InsertSot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spravk\insKontr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\insKontr.Designer.cs">
+      <DependentUpon>insKontr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spravk\Sprav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spravk\Sprav.Designer.cs">
+      <DependentUpon>Sprav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TovAndYsl\insertTovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TovAndYsl\insertTovar.Designer.cs">
+      <DependentUpon>insertTovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TovAndYsl\insertYsl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TovAndYsl\insertYsl.Designer.cs">
+      <DependentUpon>insertYsl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TovAndYsl\TY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TovAndYsl\TY.Designer.cs">
+      <DependentUpon>TY.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminsSettings.resx">
+      <DependentUpon>AdminsSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmMenu\InsertDolzh.resx">
+      <DependentUpon>InsertDolzh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmMenu\InsertPodp.resx">
+      <DependentUpon>InsertPodp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmMenu\InsertSklad.resx">
+      <DependentUpon>InsertSklad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmMenu\InsertUser.resx">
+      <DependentUpon>InsertUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmMenu\Option.resx">
+      <DependentUpon>Option.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authoriz.resx">
+      <DependentUpon>Authoriz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="connectBD.resx">
+      <DependentUpon>connectBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dok\Doc.resx">
+      <DependentUpon>Doc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dok\insertDok.resx">
+      <DependentUpon>insertDok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dok\Tovar.resx">
+      <DependentUpon>Tovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dok\Ysluga.resx">
+      <DependentUpon>Ysluga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JornalObsl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>JornalObsl.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Otchet.resx">
+      <DependentUpon>Otchet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravk\InsertFN.resx">
+      <DependentUpon>InsertFN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravk\InsertKas.resx">
+      <DependentUpon>InsertKas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravk\InsertModel.resx">
+      <DependentUpon>InsertModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravk\InsertNeispr.resx">
+      <DependentUpon>InsertNeispr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravk\InsertOFD.resx">
+      <DependentUpon>InsertOFD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravk\InsertSot.resx">
+      <DependentUpon>InsertSot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Spravk\insKontr.resx">
+      <DependentUpon>insKontr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravk\Sprav.resx">
+      <DependentUpon>Sprav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TovAndYsl\insertTovar.resx">
+      <DependentUpon>insertTovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TovAndYsl\insertYsl.resx">
+      <DependentUpon>insertYsl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TovAndYsl\TY.resx">
+      <DependentUpon>TY.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exitd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tovar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ysl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dFon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dFon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconAvt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\podkl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\knop_verh__04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
