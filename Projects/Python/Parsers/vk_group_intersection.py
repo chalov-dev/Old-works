@@ -8,7 +8,6 @@ def get_users(groupid):
         info = info + vk_api.groups.getMembers(group_id=groupid, v=5.124, offset=i * 1000)["items"]
     return info
 
-
 def get_intersection(group1, group2):
     group1 = set(group1)
     group2 = set(group2)
