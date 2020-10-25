@@ -1,5 +1,6 @@
 import vk
 
+
 def get_users(groupid):
     start = vk_api.groups.getMembers(group_id=groupid, v=5.124)
     info = start["items"]
@@ -7,6 +8,7 @@ def get_users(groupid):
     for i in range(1, count + 1):
         info = info + vk_api.groups.getMembers(group_id=groupid, v=5.124, offset=i * 1000)["items"]
     return info
+
 
 def get_intersection(group1, group2):
     group1 = set(group1)
@@ -24,9 +26,15 @@ def merge_users(group1, group2):
 
 
 def save_info(info, filename="info.txt"):
-    with open(filename, "w") as file:
+    with open(filename, "w") as f:
         for item in info:
-            file.write(f'vk.com/id{str(item)}\n')
+            f.write(f'vk.com/id{str(item)}\n')
+
+
+def save_intersection(intersection, filename="info_intersection"):
+    with open(filename, "w") as f:
+        for i in intersection:
+            f.write((f'vk.com/id{str(i)}\n'))
 
 
 def extract_info(filename="info.txt"):
@@ -42,7 +50,8 @@ if __name__ == "__main__":
     session = vk.Session(access_token=token)
     vk_api = vk.API(session)
     community_1 = get_users("name(id) coomunity")
-    community_2 = get_users("name(id) coomunity")
-    get_intersection(community_1, community_2)
+    community_2 = get_users("name(id) coomunity 2")
+    intersection = get_intersection(community_1, community_2)
     union = merge_users(community_1, community_2)
     save_info(union)
+    save_intersection(intersection)
