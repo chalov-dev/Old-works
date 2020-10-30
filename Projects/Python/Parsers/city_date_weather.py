@@ -36,13 +36,11 @@ def current_data(data):
 
 CITY = {
     'Москва': 'Moscow',
-    'Егорьевск': 'Egorievsk',
     'Владивосток': 'Vladivostok'
 }
 
 UTC_OFFSET = {
     'Москва': 3,
-    'Егорьевск': 3,
     'Владивосток': 10
 }
 x = input('Введите название города: ')
