@@ -9,8 +9,13 @@ def current_time(city):
 
 
 def handler_requests(city):
-    url = 'http://wttr.in/' + CITY[city] + '?0T'
-    response = requests.get(url)
+    url = 'http://wttr.in/' + CITY[city]
+    param_weather = {
+        'lang': 'ru',
+        'T': '',
+        '0': ''
+    }
+    response = requests.get(url, params=param_weather)
     weather = response.text
     return weather
 
@@ -19,6 +24,7 @@ def decor_weather(func):
     def wrapper(l):
         print(f'Погода на данный момент:')
         func(l)
+
     return wrapper
 
 
@@ -33,6 +39,7 @@ def current_data(data):
     offset = dt.timedelta(hours=UTC_OFFSET[data])
     result = dt.datetime.utcnow() + offset
     return result.strftime('%d %B %Yг, %A')
+
 
 CITY = {
     'Москва': 'Moscow',
@@ -50,4 +57,5 @@ if x in CITY and x in UTC_OFFSET:
     print(f'Дата: {current_data(x)}')
     result_handler = handler_requests(x)
     result_weather = format_weather(result_handler)
+
 
